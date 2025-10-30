@@ -103,3 +103,13 @@ function filtrarUsuariosEdad(usuarios, edadMinima) {
     console.log("Usuarios filtrados: ",usuariosFiltrados);
 }
 filtrarUsuariosEdad(usuarios, 26)
+
+// Ejercicio 6: Contador de Palabras
+// Editor de texto.
+let texto = "Hola, este es un contador de palabras."
+function contadorPalabras(texto) {
+    let palabras = texto.split(" ")
+    console.log(palabras);
+    console.log("En total hay", palabras.length, " palabras.");    
+}
+contadorPalabras(texto)

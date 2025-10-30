@@ -83,3 +83,23 @@ function calcularPromedioNotas(notas) {
     return promedio;
 }
 calcularPromedioNotas(prompt("Escriba las notas para calcular el promedio: "));
+
+// Ejercicio 5: Filtrar Usuarios por Edad
+// Red social.
+let usuarios = [
+    { nombre: "Ana", edad: 25 },
+    { nombre: "Jhon", edad: 34 },
+    { nombre: "Ema", edad: 40 },
+    { nombre: "Juan", edad: 19 } 
+]
+
+function filtrarUsuariosEdad(usuarios, edadMinima) {
+    let usuariosFiltrados = [];
+    usuarios.forEach(element => {
+        console.log('Usuario', element);
+        console.log('Edad', element.edad);
+        if(element.edad >= edadMinima) usuariosFiltrados.push(element);
+    });
+    console.log("Usuarios filtrados: ",usuariosFiltrados);
+}
+filtrarUsuariosEdad(usuarios, 26)

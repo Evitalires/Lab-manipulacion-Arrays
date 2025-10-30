@@ -113,3 +113,41 @@ function contadorPalabras(texto) {
     console.log("En total hay", palabras.length, " palabras.");    
 }
 contadorPalabras(texto)
+
+// Ejercicio 7: Simulador de Cajero Automático
+// App bancaria
+
+function retirarDinero(saldo, monto) {
+    console.log("Su saldo es: $ ", saldo);
+    console.log("Su valor a retirar es: $ ", monto);
+    while (monto > saldo) {
+        console.log("Fondos Insuficientes.");
+        monto = parseFloat(prompt("Ingrese un monto menor a $" + saldo + " : "));
+    }
+        let nuevoSaldo = saldo - monto;
+        console.log("Su nuevo saldo es: $", nuevoSaldo);
+}
+retirarDinero(100000, 100001);
+
+// Ejercicio 8: Cambio de Moneda
+// App de viajes.
+function convertirMoneda(pesos, monedaDestino) {
+    pesos = parseInt(pesos);
+
+    if(monedaDestino.toUpperCase() == "USD") {
+        let cotizacion = 3883;
+        let conversion = (pesos / cotizacion).toFixed(2);
+        console.log("Cotización USD ($1) A COP: $ ", cotizacion );
+        console.log("Hoy, sus $ ", pesos, "pesos. Equivalen a: $", conversion, " USD" );
+    }
+    if(monedaDestino.toUpperCase() == "EUR") {
+        let cotizacion = 4492;
+        let conversion = (pesos / cotizacion ).toFixed(2);
+        console.log("Cotización EUR ($1) A COP: $ ", cotizacion );
+        console.log("Hoy, sus $ ", pesos, "pesos. Equivalen a: $", conversion, " EUR" );
+    }
+}
+
+let pesos = prompt("Ingrese la cantidad de COP's a convertir: ");
+let monedaDestino =prompt("Ingrese la moneda para realizar el cambio (EUR O USD):"); 
+convertirMoneda(pesos, monedaDestino);

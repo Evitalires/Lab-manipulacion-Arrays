@@ -39,3 +39,25 @@ function validatePassword(password) {
 
 let newPassword = askPassword();
 validatePassword(newPassword);
+
+//Ejercicio 3
+// Sistema de gestion de inventario
+const inventario = [
+ { nombre: "Camisa", precio: 20 },
+ { nombre: "Zapatos", precio: 50 }
+];
+function buscarProducto(nombre,inventario) {
+    const existe = inventario.some(
+        item => item.nombre.toLowerCase() === nombre.toLowerCase()
+    )    
+    if(existe) {
+        console.log("El producto existe.");
+    } else {
+        return console.log(null);
+    }
+}
+console.log(inventario);
+console.log(inventario[0]);
+
+buscarProducto("Teche", inventario);
+buscarProducto("Zapatos", inventario);

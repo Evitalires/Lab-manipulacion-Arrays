@@ -61,3 +61,25 @@ console.log(inventario[0]);
 
 buscarProducto("Teche", inventario);
 buscarProducto("Zapatos", inventario);
+
+//Ejercicio 4
+function calcularPromedioNotas(notas) {
+    //separar notas
+    let notasPuras = notas
+        .split("")
+        .filter(char => !isNaN(parseInt(char)));
+    console.log('Notas: ', notasPuras);
+    
+    let suma = 0;
+    notasPuras.forEach(element => {
+        suma += parseInt(element)
+    });
+    console.log("Suma:", suma);
+    console.log(notasPuras.len);
+    
+    let promedio = suma / notasPuras.length;
+    promedio = promedio.toFixed(2);
+    console.log("El promedio de notas es: ", promedio);
+    return promedio;
+}
+calcularPromedioNotas(prompt("Escriba las notas para calcular el promedio: "));
